@@ -1,0 +1,30 @@
+<section class="home">
+  <img
+    class="home__logo"
+    src="assets/images/logo-{{ (isDarkMode$ | async) ? 'dark' : 'light' }}.svg"
+    alt="Youtube & Notion logo">
+
+  <form
+    class="home__form"
+    (ngSubmit)="handleSubmit()"
+    #searchForm="ngForm"
+  >
+    <div class="home__search">
+      <app-search [(ngModel)]="searchTerm" name="search"></app-search>
+    </div>
+
+    <button type="submit" class="home__button">
+      Pesquisar
+    </button>
+  </form>
+</section>
+
+<section class="github-detail">
+  <app-detail></app-detail>
+</section>
+
+<footer class="footer">
+  <p>DEV. by <a href="https://www.linkedin.com/in/cggomes/" target="_blank">Christian</a></p>
+  <p>UXD. by <a href="https://www.linkedin.com/in/pamela-nikole/">Pâmela</a></p>
+</footer>
+
